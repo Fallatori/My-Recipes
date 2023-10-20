@@ -1,6 +1,5 @@
 import { defineField } from "sanity";
 import { BiUser } from "react-icons/bi";
-import ingredients from "./ingredient";
 
 const recipe = {
   name: "recipe",
@@ -41,6 +40,13 @@ const recipe = {
       type: "array",
       description: "Add ingredients",
       of: [{ type: "ingredient" }],
+    },
+    {
+      name: "steps",
+      title: "Steps",
+      type: "array",
+      description: "Add Steps",
+      of: [{ type: "step" }],
     },
   ],
 };
