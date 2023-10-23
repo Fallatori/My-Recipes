@@ -1,3 +1,5 @@
+import { PreviewValue } from "sanity";
+
 const ingredient = {
   name: "ingredient",
   title: "Ingredient",
@@ -20,7 +22,7 @@ const ingredient = {
       amount: "amount",
     },
     // Displays Ingredient and amount in the preview
-    prepare({ ingredient, amount }: PreviewProps) {
+    prepare({ ingredient, amount }: PreviewProps): PreviewValue {
       return {
         title: `${ingredient} ${amount}`,
       };
@@ -29,8 +31,8 @@ const ingredient = {
 };
 
 interface PreviewProps {
-  ingredient: string;
-  amount: string;
+  ingredient?: string;
+  amount?: string;
 }
 
 export default ingredient;
