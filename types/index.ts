@@ -1,13 +1,27 @@
 import { PortableTextBlock } from "sanity";
 
+interface Image {
+  alt: string;
+  image: string;
+}
+
+interface Ingredient {
+  name: string;
+  amount: string;
+  _key: string;
+}
+
+interface RecipeStep {
+  shortDescription: string;
+  stepImage: Image;
+}
+
 export type RecipeType = {
   _id: string;
-  mainImage: {
-    alt: string;
-    image: string;
-  };
+  mainImage: Image;
   headline: string;
+  slug: string;
   description: PortableTextBlock[];
-  ingredients: string[];
-  steps: string[];
+  ingredients: Ingredient[];
+  steps: RecipeStep[];
 };

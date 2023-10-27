@@ -28,6 +28,15 @@ const recipe = {
         },
       ],
     },
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description:
+        "Add a custom slug for the URL or generate one from the name",
+      options: { source: "headline" },
+      validation: (rule) => rule.required(),
+    }),
     {
       name: "description",
       title: "Description",

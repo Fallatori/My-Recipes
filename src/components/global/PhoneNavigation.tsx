@@ -9,7 +9,7 @@ export default function PhoneNavigation() {
     "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group";
 
   return (
-    <header className="py-6 border-b border-zinc-800 z-30 mb-8 px-8">
+    <footer>
       <nav className="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200">
         <div className="grid h-full max-w-lg grid-cols-3 mx-auto">
           <Link href="/" className={linkStyles}>
@@ -23,6 +23,6 @@ export default function PhoneNavigation() {
           </Link>
         </div>
       </nav>
-    </header>
+    </footer>
   );
 }
