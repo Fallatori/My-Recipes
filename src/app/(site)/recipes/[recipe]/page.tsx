@@ -4,7 +4,6 @@ import { PortableText } from "@portabletext/react";
 import { portableTextToPlainText } from "@/utils/portableTextToPlainText";
 import type { RecipeType } from "root/types";
 import { getSingleRecipe } from "root/sanity/sanity.query";
-import ingredient from "root/schemas/ingredient";
 
 type Props = {
   params: {
@@ -28,9 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Project({ params }: Props) {
+export default async function Recipe({ params }: Props) {
   const slug = params.recipe;
   const recipe: RecipeType = await getSingleRecipe(slug);
+
+  const ingredientsArray = recipe.ingredients ?? [];
 
   return (
     <main className="">
@@ -52,7 +53,7 @@ export default async function Project({ params }: Props) {
           <PortableText value={recipe.description} />
         </div>
         <div className="mb-6">
-          {recipe.ingredients.map((ingredient) => (
+          {ingredientsArray.map((ingredient) => (
             <div
               key={ingredient._key}
               className="flex justify-between px-4 border-b"

@@ -8,6 +8,19 @@ const step = {
       title: "stepImage",
       type: "image",
       description: "Upload an image",
+      validation: (Rule: {
+        custom: (
+          arg0: (value: { asset: any }) => true | { message: string }
+        ) => any;
+      }) => [
+        Rule.custom((value: { asset: any }) => {
+          return value && value.asset
+            ? true
+            : {
+                message: "An Image is Required!",
+              };
+        }),
+      ],
       fields: [
         {
           name: "alt",

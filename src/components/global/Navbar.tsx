@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ButtonCategory } from "../ButtonCategory";
 import { SearchInput } from "../SearchInput";
 

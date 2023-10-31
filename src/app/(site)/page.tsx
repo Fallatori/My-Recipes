@@ -1,10 +1,11 @@
+import { getRecipes } from "root/sanity/sanity.query";
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/global/Navbar";
+import { MainPage } from "@/components/MainPage";
 
+export default async function Recipes() {
+  const recipes = await getRecipes();
 
-export default async function Home() {
-
-  return (
-    <main className="max-w-7xl mx-auto px-6">
-      <h1>Main Page</h1>
-    </main>
-  );
+  return <MainPage recipes={recipes} />;
 }
