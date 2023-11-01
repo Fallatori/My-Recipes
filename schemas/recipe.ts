@@ -1,11 +1,11 @@
 import { defineField } from "sanity";
-import { BiUser } from "react-icons/bi";
+import { BiBowlRice } from "react-icons/bi";
 
 const recipe = {
   name: "recipe",
   title: "Recipe",
   type: "document",
-  icon: BiUser,
+  icon: BiBowlRice,
   fields: [
     defineField({
       name: "headline",
@@ -13,6 +13,14 @@ const recipe = {
       type: "string",
       description: "Whats the recipe called",
       validation: (Rule) => Rule.required().min(5).max(45),
+    }),
+    defineField({
+      name: "profile",
+      title: "Profile",
+      type: "reference",
+      to: [{ type: "profile" }],
+      description: "Recipe is made by",
+      validation: (Rule) => [Rule.required().error("Please select a profile")],
     }),
     {
       name: "mainImage",

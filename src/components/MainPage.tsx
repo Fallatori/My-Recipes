@@ -4,37 +4,29 @@ import Link from "next/link";
 import { useState } from "react";
 import Navbar from "./global/Navbar";
 import Image from "next/image";
+import { RecipeType } from "root/types";
 
 interface Props {
-  recipes: Recipe[];
-}
-
-interface Recipe {
-  headline: string;
-  _id: string;
-  slug: string;
-  mainImage: any;
+  recipes: RecipeType[];
 }
 
 export const MainPage = ({ recipes }: Props) => {
-  const [query, setQuery] = useState("cake");
+  const [query, setQuery] = useState("");
 
-  const searchFilter = (array: Recipe[]) => {
+  const searchFilter = (array: RecipeType[]) => {
     return array.filter((el) => el.headline.toLowerCase().includes(query));
   };
 
   const filtered = searchFilter(recipes);
 
-  console.log({ recipes, filtered, query });
-
-  // maybe move this to SearchInput
+  // send this to SearchInput to change the query
   const handleChange = (e: any) => {
     setQuery(e.target.value);
   };
 
   return (
     <>
-      <Navbar />
+      <Navbar searchQuery={handleChange} />
       <main className="max-w-7xl mx-auto lg:px-16 px-2 min min-h-screen">
         <section className="grid grid-cols-2 mb-16 min-h-full gap-x-2 gap-y-6">
           {filtered &&
@@ -58,6 +50,7 @@ export const MainPage = ({ recipes }: Props) => {
                 <h1 className="text-sm font-medium tracking-tight leading-tight min-w-full px-1">
                   {data.headline}
                 </h1>
+                <p>{data.profile.username}</p>
               </Link>
             ))}
         </section>

@@ -7,6 +7,7 @@ export async function getRecipes(): Promise<RecipeType[]> {
     groq`*[_type == "recipe"] {
         _id,
         headline,
+        profile->{username},
         mainImage {alt, "image": asset->url},
         "slug": slug.current,
       }`,
