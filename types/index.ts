@@ -13,6 +13,7 @@ interface Ingredient {
 
 interface Profile {
   username: string;
+  profileImage: Image;
 }
 interface RecipeStep {
   shortDescription: string;
@@ -28,4 +29,12 @@ export type RecipeType = {
   description: PortableTextBlock[];
   ingredients: Ingredient[];
   steps: RecipeStep[];
+};
+
+export type ProfileType = {
+  _id: string;
+  email: string;
+  username: string;
+  profileImage: Image;
+  shortBio: string;
 };

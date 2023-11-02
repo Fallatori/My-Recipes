@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { GoHomeFill } from "react-icons/go";
 import { BsFillPlusSquareFill } from "react-icons/bs";
-import { PiBowlFoodFill } from "react-icons/pi";
+import { BiSolidUser } from "react-icons/bi";
 import useResizeObserver from "@react-hook/resize-observer";
 import { useLayoutEffect, useRef, useState } from "react";
 
@@ -28,6 +28,7 @@ export default function PhoneNavigation() {
   const ref = useRef(null);
   const size = useSize(ref);
 
+  // Not Sure the best way to deal with this
   const iconStyles = "w-6 h-6 mb-1 text-gray-500 group-hover:text-blue-600";
   const linkStyles =
     "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group";
@@ -46,8 +47,8 @@ export default function PhoneNavigation() {
           <Link href="/studio" className={linkStyles}>
             <BsFillPlusSquareFill className={iconStyles} />
           </Link>
-          <Link href="/recipes" className={linkStyles}>
-            <PiBowlFoodFill className={iconStyles} />
+          <Link href="/profiles" className={linkStyles}>
+            <BiSolidUser className={iconStyles} />
           </Link>
         </div>
       </nav>

@@ -1,13 +1,19 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
-import { RecipeType } from "root/types";
+import { ProfileType, RecipeType } from "root/types";
 
 export async function getRecipes(): Promise<RecipeType[]> {
   return client.fetch(
     groq`*[_type == "recipe"] {
         _id,
         headline,
-        profile->{username},
+        profile->{
+          username, 
+          profileImage{
+            alt, 
+            "image": asset->url
+            }
+          },
         mainImage {alt, "image": asset->url},
         "slug": slug.current,
       }`,
@@ -30,5 +36,17 @@ export async function getSingleRecipe(slug: string) {
       steps[] {shortDescription, stepImage {alt, "image": asset->url}},
     }`,
     { slug }
+  );
+}
+
+export async function getProfiles(): Promise<ProfileType[]> {
+  return client.fetch(
+    groq`*[_type == "profile"] {
+        _id,
+        email,
+        username,
+        profileImage{alt, "image": asset->url},
+        shortBio,
+      }`
   );
 }
