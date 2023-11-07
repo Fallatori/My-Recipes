@@ -21,6 +21,7 @@ interface RecipeStep {
 }
 
 export type RecipeType = {
+  _updatedAt: string;
   _id: string;
   mainImage: Image;
   headline: string;

@@ -4,5 +4,7 @@
 
 - Figure out what to do with the sorting buttons
 - Search field add catagory search
-- Change recipe page to main page
-- Add Profile schema
+- Add Dark Theme
+- Add hover to profiles
+- Desktop styling
+- Look into Error adding update date to recipes

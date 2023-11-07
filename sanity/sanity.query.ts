@@ -5,6 +5,7 @@ import { ProfileType, RecipeType } from "root/types";
 export async function getRecipes(): Promise<RecipeType[]> {
   return client.fetch(
     groq`*[_type == "recipe"] {
+        _updatedAt,
         _id,
         headline,
         profile->{
@@ -48,5 +49,18 @@ export async function getProfiles(): Promise<ProfileType[]> {
         profileImage{alt, "image": asset->url},
         shortBio,
       }`
+  );
+}
+
+export async function getSingleProfile(id: string) {
+  return client.fetch(
+    groq`*[_type == "profile" && _id == $id][0]{
+      _id,
+      email,
+      username,
+      profileImage{alt, "image": asset->url},
+      shortBio,
+    }`,
+    { id }
   );
 }

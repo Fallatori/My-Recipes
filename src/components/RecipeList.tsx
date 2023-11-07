@@ -4,9 +4,10 @@ import { RecipeType } from "root/types";
 
 interface Props {
   recipes: RecipeType[];
+  hideUser?: boolean;
 }
 
-export default function RecipeList({ recipes }: Props) {
+export default function RecipeList({ recipes, hideUser }: Props) {
   return (
     <main className="max-w-7xl mx-auto lg:px-16 px-2 min min-h-screen">
       <section className="grid grid-cols-2 mb-16 min-h-full gap-x-2 gap-y-6">
@@ -31,16 +32,20 @@ export default function RecipeList({ recipes }: Props) {
               <h2 className="text-sm font-medium tracking-tight leading-tight min-w-full px-1 mb-1">
                 {data.headline}
               </h2>
-              <div className="text-xs px-1 flex flex-row gap-1 items-center">
-                <Image
-                  className="rounded-full h-5 w-5"
-                  src={data.profile.profileImage.image}
-                  width={20}
-                  height={20}
-                  alt={data.profile.profileImage.alt}
-                ></Image>
-                <p className="text-gray-500 ">{data.profile.username}</p>
-              </div>
+              {!hideUser && (
+                <div className="text-xs px-1 flex flex-row gap-1 items-center">
+                  <Image
+                    className="rounded-full h-5 w-5"
+                    src={data.profile.profileImage.image}
+                    width={20}
+                    height={20}
+                    alt={data.profile.profileImage.alt}
+                  ></Image>
+                  <p className="text-gray-500 ">{data.profile.username}</p>
+                  {/* Some error in this code, Lets fix it! */}
+                  {/* <p>{new Date(data._updatedAt).toLocaleDateString()}</p> */}
+                </div>
+              )}
             </Link>
           ))}
       </section>
