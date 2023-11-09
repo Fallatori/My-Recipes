@@ -14,7 +14,7 @@ export default async function singleProfile({ params }: Props) {
   const recipes = await getRecipes();
 
   const id = params.profile;
-  const { _id, username, profileImage, shortBio, email }: ProfileType =
+  const { username, profileImage, shortBio, email }: ProfileType =
     await getSingleProfile(id);
 
   const filterRecipes = (array: RecipeType[]) => {
