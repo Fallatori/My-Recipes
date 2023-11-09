@@ -17,6 +17,7 @@ export async function getRecipes(): Promise<RecipeType[]> {
           },
         mainImage {alt, "image": asset->url},
         "slug": slug.current,
+        tags[] {label, value},
       }`,
     {
       next: {

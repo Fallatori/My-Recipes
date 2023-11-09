@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import Navbar from "./global/Navbar";
-import Image from "next/image";
 import { RecipeType } from "root/types";
 import RecipeList from "./RecipeList";
 
@@ -14,8 +12,12 @@ interface Props {
 export const MainPage = ({ recipes }: Props) => {
   const [query, setQuery] = useState("");
 
-  const searchFilter = (array: RecipeType[]) => {
-    return array.filter((el) => el.headline.toLowerCase().includes(query));
+  const searchFilter = (recipes: RecipeType[]) => {
+    return recipes.filter(
+      (recipe) =>
+        recipe.headline.toLowerCase().includes(query) ||
+        recipe.tags.find((tag) => tag.value === query)
+    );
   };
 
   const filtered = searchFilter(recipes);

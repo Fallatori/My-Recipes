@@ -65,6 +65,19 @@ const recipe = {
       description: "Add Steps",
       of: [{ type: "step" }],
     },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "tags",
+      options: {
+        predefinedTags: [
+          { label: "Breakfast", value: "breakfast" },
+          { label: "Lunch", value: "lunch" },
+          { label: "Dinner", value: "dinner" },
+          { label: "Dessert", value: "dessert" },
+        ],
+      },
+    },
   ],
 };
 

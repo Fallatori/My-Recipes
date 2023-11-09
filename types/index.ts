@@ -20,6 +20,11 @@ interface RecipeStep {
   stepImage: Image;
 }
 
+interface Tags {
+  label: string;
+  value: string;
+}
+
 export type RecipeType = {
   _updatedAt: string;
   _id: string;
@@ -30,6 +35,7 @@ export type RecipeType = {
   description: PortableTextBlock[];
   ingredients: Ingredient[];
   steps: RecipeStep[];
+  tags: Tags[];
 };
 
 export type ProfileType = {
