@@ -56,7 +56,7 @@ export default async function Recipe({ params }: Props) {
           {ingredientsArray.map((ingredient) => (
             <div
               key={ingredient._key}
-              className="flex justify-between px-4 border-b"
+              className="flex justify-between px-4 border-b my-4"
             >
               <p>{ingredient.name}</p>
               <p>{ingredient.amount}</p>
