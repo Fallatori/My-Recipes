@@ -9,7 +9,7 @@ export default function Navbar({ searchQuery, setQuery }: any) {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <SearchInput searchQuery={searchQuery} />
       </div>
-      <div className="flex pr-4 gap-2">
+      <div className="flex pr-4 gap-2 md:gap-24">
         <button
           className="text-gray-500 hover:text-blue-500 w-11"
           onClick={() => setQuery("")}
