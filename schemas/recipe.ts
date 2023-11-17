@@ -1,5 +1,6 @@
 import { defineField } from "sanity";
 import { BiBowlRice } from "react-icons/bi";
+import { MyInput } from "@/components/studio/MyInput";
 
 const recipe = {
   name: "recipe",

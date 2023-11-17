@@ -29,7 +29,7 @@ export const MainPage = ({ recipes }: Props) => {
 
   return (
     <>
-      <Navbar searchQuery={handleChange} setQuery={setQuery} />
+      <Navbar searchQuery={handleChange} setQuery={setQuery} query={query} />
       <RecipeList recipes={filtered} />
     </>
   );
