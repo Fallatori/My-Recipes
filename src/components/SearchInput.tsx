@@ -7,7 +7,7 @@ export function SearchInput({ searchQuery }: any) {
       <input
         onChange={searchQuery}
         placeholder="Search..."
-        className="w-full"
+        className="w-full bg-bkg text-content"
       />
     </div>
   );

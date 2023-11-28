@@ -37,7 +37,7 @@ export default async function Recipe({ params }: Props) {
     <main className="">
       <div className="max-w-3xl mx-auto">
         <Image
-          className="mb-6 object-cover h-72 w-full"
+          className="mb-2 object-cover h-72 w-full md:rounded-2xl md:h-96 md:my-6"
           width={900}
           height={460}
           src={recipe.mainImage?.image}
@@ -53,10 +53,11 @@ export default async function Recipe({ params }: Props) {
           <PortableText value={recipe.description} />
         </div>
         <div className="mb-6">
+          <h2 className="px-4 text-2xl font-medium">List of Ingredients</h2>
           {ingredientsArray.map((ingredient) => (
             <div
               key={ingredient._key}
-              className="flex justify-between px-4 border-b my-4"
+              className="flex justify-between border-b m-4"
             >
               <p>{ingredient.name}</p>
               <p>{ingredient.amount}</p>
@@ -74,7 +75,7 @@ export default async function Recipe({ params }: Props) {
                 src={step.stepImage?.image}
                 alt={step.stepImage?.alt}
               />
-              <p className="text-zinc-600 px-4">{step.shortDescription}</p>
+              <p className="text-zinc-600 px-2">{step.shortDescription}</p>
             </div>
           ))}
         </div>

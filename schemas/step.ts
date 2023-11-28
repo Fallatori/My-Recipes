@@ -10,10 +10,7 @@ const step = {
   title: "step",
   type: "object",
   components: {
-    field: DummyField,
     input: MyInput,
-    item: DummyItem,
-    preview: DummyPreview,
   },
   fields: [
     {
@@ -33,13 +30,6 @@ const step = {
                 message: "An Image is Required!",
               };
         }),
-      ],
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-        },
       ],
     },
     {

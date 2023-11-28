@@ -29,7 +29,7 @@ export default async function singleProfile({ params }: Props) {
     <main>
       <div className="flex justify-around items-center m-4">
         <Image
-          className="rounded-full object-cover h-32 w-32  bg-top z-10 border-black border-4"
+          className="rounded-full object-cover h-32 w-32  bg-top z-10 border-black border-4 bg-black"
           src={profileImage.image}
           alt={profileImage.alt}
           height={150}

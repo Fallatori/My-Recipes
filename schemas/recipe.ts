@@ -1,6 +1,5 @@
 import { defineField } from "sanity";
 import { BiBowlRice } from "react-icons/bi";
-import { MyInput } from "@/components/studio/MyInput";
 
 const recipe = {
   name: "recipe",
@@ -65,6 +64,7 @@ const recipe = {
       type: "array",
       description: "Add Steps",
       of: [{ type: "step" }],
+      components: {},
     },
     {
       name: "tags",

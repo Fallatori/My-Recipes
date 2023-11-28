@@ -14,6 +14,7 @@ interface Ingredient {
 interface Profile {
   username: string;
   profileImage: Image;
+  _id: string;
 }
 interface RecipeStep {
   shortDescription: string;

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "./global/Navbar";
 import { RecipeType } from "root/types";
 import RecipeList from "./RecipeList";
+import RecipeFilterBar from "./global/RecipeFilterbar";
 
 interface Props {
   recipes: RecipeType[];
@@ -24,12 +24,16 @@ export const MainPage = ({ recipes }: Props) => {
 
   // send this to SearchInput to change the query
   const handleChange = (e: any) => {
-    setQuery(e.target.value);
+    setQuery(e.target.value.toLowerCase());
   };
 
   return (
     <>
-      <Navbar searchQuery={handleChange} setQuery={setQuery} query={query} />
+      <RecipeFilterBar
+        searchQuery={handleChange}
+        setQuery={setQuery}
+        query={query}
+      />
       <RecipeList recipes={filtered} />
     </>
   );

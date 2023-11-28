@@ -9,7 +9,8 @@ export async function getRecipes(): Promise<RecipeType[]> {
         _id,
         headline,
         profile->{
-          username, 
+          username,
+          _id, 
           profileImage{
             alt, 
             "image": asset->url

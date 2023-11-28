@@ -6,16 +6,16 @@ export default async function Profiles() {
   const profiles = await getProfiles();
 
   return (
-    <main className="max-w-7xl mx-auto lg:px-16 min min-h-screen mt-2">
-      <section className="mb-16 min-h-full gap-x-2 gap-y-6">
+    <main className="mx-auto min min-h-screen">
+      <section className="mb-16 min-h-full">
         {profiles.map(({ profileImage, _id, username, shortBio }) => (
           <Link
             key={_id}
             href={`/profiles/${_id}`}
-            className="flex max-w-2xl border-b border-zinc-600 my-2 items-center px-2"
+            className="flex border-b border-zinc-600 items-center py-4 px-2 w-full md:px-12 hover:bg-blue-100"
           >
             <Image
-              className="rounded-2xl object-cover h-40 w-32  bg-top bg-[#1d1d20] mb-2"
+              className="rounded-2xl object-cover h-40 w-32  bg-top bg-[#1d1d20]"
               src={profileImage.image}
               alt={profileImage.alt}
               height={150}
