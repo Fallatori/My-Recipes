@@ -20,16 +20,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const rootElement = document.querySelector("html");
-    const dataTheme = rootElement?.getAttribute("data-theme");
-    if (isDark === null) {
-      rootElement?.setAttribute("data-theme", prefersDark ? "dark" : "light");
-    } else {
-      rootElement?.setAttribute(
-        "data-theme",
-        dataTheme === "dark" ? "light" : "dark"
-      );
-    }
-  }, [isDark, prefersDark]);
+
+    rootElement?.setAttribute("data-theme", isDark ? "dark" : "light");
+  }, [isDark]);
+
   return (
     <div className="grid grid-cols-2 px-12 h-12 font-medium min-h-48">
       <Link href="/" className="flex items-center gap-6 hover:text-blue-500">
