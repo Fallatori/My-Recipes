@@ -5,6 +5,12 @@ interface Image {
   image: string;
 }
 
+interface StepImage {
+  alt: string;
+  image: string;
+  flip: boolean;
+}
+
 interface Ingredient {
   name: string;
   amount: string;
@@ -18,7 +24,7 @@ interface Profile {
 }
 interface RecipeStep {
   shortDescription: string;
-  stepImage: Image;
+  stepImage: StepImage;
 }
 
 interface Tags {

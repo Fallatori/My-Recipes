@@ -19,7 +19,12 @@ export default function Navbar() {
   useEffectOnce(() => setIsMounted(true));
 
   useEffect(() => {
+    setIsDark(prefersDark);
+  }, [prefersDark]);
+
+  useEffect(() => {
     const rootElement = document.querySelector("html");
+    console.log({ isDark });
 
     rootElement?.setAttribute("data-theme", isDark ? "dark" : "light");
   }, [isDark]);

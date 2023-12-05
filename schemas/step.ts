@@ -17,6 +17,13 @@ const step = {
       name: "stepImage",
       title: "stepImage",
       type: "image",
+      fields: [
+        {
+          name: "flip",
+          title: "Flip",
+          type: "boolean",
+        },
+      ],
       description: "Upload an image",
       validation: (Rule: {
         custom: (

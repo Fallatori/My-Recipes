@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { portableTextToPlainText } from "@/utils/portableTextToPlainText";
 import type { RecipeType } from "root/types";
 import { getSingleRecipe } from "root/sanity/sanity.query";
+import { setPriority } from "os";
 
 type Props = {
   params: {
@@ -67,21 +68,26 @@ export default async function Recipe({ params }: Props) {
           ))}
         </div>
         <div>
-          {recipe.steps.map((step, index) => (
-            <div key={index} className="mb-6 px-4">
-              <h2 className="font-bold md:text-2xl">Step {index + 1}</h2>
-              <Image
-                className="mb-6 object-cover h-72 w-full rounded-xl border"
-                width={900}
-                height={460}
-                src={step.stepImage?.image}
-                alt={step.stepImage?.alt}
-              />
-              <p className="text-accent-1 px-2 md:text-xl">
-                {step.shortDescription}
-              </p>
-            </div>
-          ))}
+          {recipe.steps.map((step, index) => {
+            return (
+              <div key={index} className="mb-6 px-4">
+                <h2 className="font-bold md:text-2xl">Step {index + 1}</h2>
+                <Image
+                  className="mb-6 object-cover h-72 w-full rounded-xl border"
+                  width={900}
+                  height={460}
+                  src={
+                    step.stepImage?.image +
+                    (step.stepImage.flip ? "?flip=hv" : "")
+                  }
+                  alt={step.stepImage?.alt}
+                />
+                <p className="text-accent-1 px-2 md:text-xl">
+                  {step.shortDescription}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </main>

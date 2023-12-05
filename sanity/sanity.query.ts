@@ -36,7 +36,7 @@ export async function getSingleRecipe(slug: string) {
       mainImage {alt, "image": asset->url},
       description,
       ingredients,
-      steps[] {shortDescription, stepImage {alt, "image": asset->url}},
+      steps[] {shortDescription, stepImage {alt, "image": asset->url, flip}},
     }`,
     { slug }
   );
