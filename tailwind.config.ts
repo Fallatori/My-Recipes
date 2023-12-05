@@ -20,6 +20,9 @@ const config: Config = {
         },
         bkg: "hsl(var(--color-bkg) / <alpha-value>)",
         content: "hsl(var(--color-content) / <alpha-value>)",
+        nav: "hsl(var(--color-nav) / <alpha-value>)",
+        navText: "hsl(var(--color-nav-text) / <alpha-value>)",
+        hov: "hsl(var(--color-hover) / <alpha-value>)",
       },
       width: {
         medium: "669px",

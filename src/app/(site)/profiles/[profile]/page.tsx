@@ -37,7 +37,7 @@ export default async function singleProfile({ params }: Props) {
           quality={100}
         ></Image>
         <div className="z-0 flex items-center -ml-14 flex-1">
-          <div className="bg-green-600 bg-opacity-50 h-auto pl-16 py-2 rounded-r-3xl text-sm flex-1">
+          <div className="bg-accent-2 h-auto pl-16 py-2 rounded-r-3xl text-sm flex-1">
             <h2 className="text-2xl mb-1">{username}</h2>
             <p className="mb-1">{shortBio}</p>
             <p>{email}</p>

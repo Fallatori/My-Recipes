@@ -34,7 +34,7 @@ export default async function Recipe({ params }: Props) {
   const ingredientsArray = recipe.ingredients ?? [];
 
   return (
-    <main className="">
+    <main className="text-content">
       <div className="max-w-3xl mx-auto">
         <Image
           className="mb-2 object-cover h-72 w-full md:rounded-2xl md:h-96 md:my-6"
@@ -49,15 +49,17 @@ export default async function Recipe({ params }: Props) {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-y-6 leading-7 text-zinc-600 mb-6 px-4">
+        <div className="flex flex-col gap-y-6 leading-7 mb-6 px-4 text-accent-1 md:text-xl">
           <PortableText value={recipe.description} />
         </div>
         <div className="mb-6">
-          <h2 className="px-4 text-2xl font-medium">List of Ingredients</h2>
+          <h2 className="px-4 text-lg font-medium md:text-2xl">
+            List of Ingredients
+          </h2>
           {ingredientsArray.map((ingredient) => (
             <div
               key={ingredient._key}
-              className="flex justify-between border-b m-4"
+              className="flex justify-between border-b m-4 text-accent-1 md:text-xl"
             >
               <p>{ingredient.name}</p>
               <p>{ingredient.amount}</p>
@@ -67,7 +69,7 @@ export default async function Recipe({ params }: Props) {
         <div>
           {recipe.steps.map((step, index) => (
             <div key={index} className="mb-6 px-4">
-              <h2 className="font-bold">Step {index + 1}</h2>
+              <h2 className="font-bold md:text-2xl">Step {index + 1}</h2>
               <Image
                 className="mb-6 object-cover h-72 w-full rounded-xl border"
                 width={900}
@@ -75,7 +77,9 @@ export default async function Recipe({ params }: Props) {
                 src={step.stepImage?.image}
                 alt={step.stepImage?.alt}
               />
-              <p className="text-zinc-600 px-2">{step.shortDescription}</p>
+              <p className="text-accent-1 px-2 md:text-xl">
+                {step.shortDescription}
+              </p>
             </div>
           ))}
         </div>

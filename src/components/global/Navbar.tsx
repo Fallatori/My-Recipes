@@ -1,24 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useEffectOnce, useMedia, useMountedState } from "react-use";
 import Image from "next/image";
 import mooncake from "@/icons/mooncake.png";
 import Link from "next/link";
 import { BiSolidUser } from "react-icons/bi";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { SunIcon } from "@/icons/svg/darktheme";
+import { MoonIcon, SunIcon } from "@/icons/svg/darktheme";
 
 export default function Navbar() {
+  const prefersDark = useMedia("(prefers-color-scheme: dark)", false);
+
+  const [isDark, setIsDark] = useState<boolean>(prefersDark);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffectOnce(() => setIsMounted(true));
+
+  useEffect(() => {
+    const rootElement = document.querySelector("html");
+    const dataTheme = rootElement?.getAttribute("data-theme");
+    if (isDark === null) {
+      rootElement?.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    } else {
+      rootElement?.setAttribute(
+        "data-theme",
+        dataTheme === "dark" ? "light" : "dark"
+      );
+    }
+  }, [isDark, prefersDark]);
   return (
-    <div className="grid grid-cols-2 px-12 h-12 font-medium border-b-2 border-accent-1">
+    <div className="grid grid-cols-2 px-12 h-12 font-medium min-h-48">
       <Link href="/" className="flex items-center gap-6 hover:text-blue-500">
         <Image
           alt="Recipe logo"
           src={mooncake}
           width={50}
           height={50}
-          className="w-12 h-full"
+          className="w-12 h-fit"
         />
         My Recipes
       </Link>
@@ -40,17 +60,10 @@ export default function Navbar() {
         <button
           className="hover:text-blue-500"
           onClick={() => {
-            const rootElement = document.querySelector("html");
-            const currentTheme = rootElement?.getAttribute("data-theme");
-            document
-              .querySelector("html")
-              ?.setAttribute(
-                "data-theme",
-                currentTheme === "dark" ? "light" : "dark"
-              );
+            setIsDark((t) => !t);
           }}
         >
-          <SunIcon />
+          {isMounted && (isDark ? <SunIcon /> : <MoonIcon />)}
           {/* <MdLightMode /> */}
           {/* <MdDarkMode /> */}
         </button>

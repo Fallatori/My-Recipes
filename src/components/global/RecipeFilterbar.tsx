@@ -11,13 +11,12 @@ export default function RecipeFilterBar({ searchQuery, setQuery, query }: any) {
         <SearchInput searchQuery={searchQuery} />
       </div>
       <div className="flex justify-center">
-        <div className="flex px-4 gap-2 md:max-w-[669px]">
+        <div className="flex px-4 gap-2 md:max-w-[669px] text-accent-1">
           <button
             className={clsx(
-              "flex h-[48px] text-gray-500 items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3 md:font-extrabold md:text-lg",
+              "flex h-[48px] items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3 md:font-bold md:text-lg",
               {
-                "bg-sky-100 text-blue-500 underline underline-offset-4":
-                  query === "",
+                "text-blue-500 underline underline-offset-4": query === "",
               }
             )}
             onClick={() => setQuery("")}

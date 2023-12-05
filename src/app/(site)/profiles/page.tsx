@@ -12,7 +12,7 @@ export default async function Profiles() {
           <Link
             key={_id}
             href={`/profiles/${_id}`}
-            className="flex border-b border-zinc-600 items-center py-4 px-2 w-full md:px-12 hover:bg-blue-100"
+            className="flex border-b border-zinc-600 items-center py-4 px-2 w-full md:px-12 hover:bg-hov/10"
           >
             <Image
               className="rounded-2xl object-cover h-40 w-32  bg-top bg-[#1d1d20]"
@@ -24,7 +24,7 @@ export default async function Profiles() {
             ></Image>
             <div className="font-medium tracking-tight px-4">
               <h2 className="text-xl">{username}</h2>
-              <p className="text-black text-opacity-60 text-sm">{shortBio}</p>
+              <p className="text-accent-1 text-sm">{shortBio}</p>
             </div>
           </Link>
         ))}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { GoHomeFill } from "react-icons/go";
-import { BsFillPlusSquareFill } from "react-icons/bs";
+import { BsFillPlusSquareFill, BsPeopleFill } from "react-icons/bs";
 import { BiSolidUser } from "react-icons/bi";
 import useResizeObserver from "@react-hook/resize-observer";
 import { useLayoutEffect, useRef, useState } from "react";
@@ -48,7 +48,7 @@ export default function PhoneNavigation() {
             <BsFillPlusSquareFill className={iconStyles} />
           </Link>
           <Link href="/profiles" className={linkStyles}>
-            <BiSolidUser className={iconStyles} />
+            <BsPeopleFill className={iconStyles} />
           </Link>
         </div>
       </nav>
