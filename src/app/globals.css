@@ -9,7 +9,8 @@
         --color-content: 217deg 32.6% 17.5%;
         --color-accent1: 220deg 8.94% 46.08%;
         --color-accent2: 120deg 31.44% 59.63%;
-        --color-nav: 217deg 32.6% 17.5%;
+        --color-nav1: 217deg 32.6% 17.5%;
+        --color-nav2: 210deg 40% 98.04%;
         --color-nav-text: 210deg 40% 98%;
         --color-hover: 0deg 0% 100%;
     }
@@ -19,7 +20,8 @@
             --color-content: 210deg 40% 98%;
             --color-accent1: 215deg 23.6% 72.73%;
             --color-accent2: 91.57deg 58.1% 25.02%;
-            --color-nav: 218deg 32.42% 11.68%;
+            --color-nav1: 218deg 32.42% 11.68%;
+            --color-nav2: 218deg 32.42% 11.68%
             --color-hover: 0deg 100% 0%;
         }
     }
@@ -28,7 +30,8 @@
         --color-content: 210deg 40% 98%;
         --color-accent1: 215deg 23.6% 72.73%;
         --color-accent2: 91.57deg 58.1% 25.02%;
-        --color-nav: 218deg 32.42% 11.68%;
+        --color-nav1: 218deg 32.42% 11.68%;
+        --color-nav2: 218deg 32.42% 11.68%;
         --color-hover: 0deg 0% 100%;
        
     }
@@ -37,7 +40,8 @@
         --color-content: 217deg 32.6% 17.5%;
         --color-accent1: 220deg 8.94% 46.08%;
         --color-accent2: 120deg 31.44% 59.63%;
-        --color-nav: 217deg 32.6% 17.5%;
+        --color-nav1: 217deg 32.6% 17.5%;
+        --color-nav2: 210deg 40% 98.04%;
         --color-nav-text: 210deg 40% 98%;
         --color-hover: 230deg 100% 50%;
     }

@@ -2,5 +2,5 @@
 
 ## Tasks:
 
-- Add Dark Theme
-- Desktop styling
+- Add current Pathname navigation to Backbutton recipe
+- Change text field in studio steps to TextBlock

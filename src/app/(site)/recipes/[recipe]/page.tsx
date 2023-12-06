@@ -4,7 +4,8 @@ import { PortableText } from "@portabletext/react";
 import { portableTextToPlainText } from "@/utils/portableTextToPlainText";
 import type { RecipeType } from "root/types";
 import { getSingleRecipe } from "root/sanity/sanity.query";
-import { setPriority } from "os";
+import { BiArrowBack } from "react-icons/bi";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -36,6 +37,11 @@ export default async function Recipe({ params }: Props) {
 
   return (
     <main className="text-content">
+      <div className="fixed top-4 left-4">
+        <Link href="/">
+          <BiArrowBack className="h-12 w-12 opacity-20 hover:opacity-80" />
+        </Link>
+      </div>
       <div className="max-w-3xl mx-auto">
         <Image
           className="mb-2 object-cover h-72 w-full md:rounded-2xl md:h-96 md:my-6"

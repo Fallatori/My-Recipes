@@ -20,7 +20,10 @@ const config: Config = {
         },
         bkg: "hsl(var(--color-bkg) / <alpha-value>)",
         content: "hsl(var(--color-content) / <alpha-value>)",
-        nav: "hsl(var(--color-nav) / <alpha-value>)",
+        nav: {
+          1: "hsl(var(--color-nav1) / <alpha-value>)",
+          2: "hsl(var(--color-nav2) / <alpha-value>)",
+        },
         navText: "hsl(var(--color-nav-text) / <alpha-value>)",
         hov: "hsl(var(--color-hover) / <alpha-value>)",
       },

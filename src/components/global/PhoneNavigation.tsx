@@ -6,6 +6,7 @@ import { BsFillPlusSquareFill, BsPeopleFill } from "react-icons/bs";
 import { BiSolidUser } from "react-icons/bi";
 import useResizeObserver from "@react-hook/resize-observer";
 import { useLayoutEffect, useRef, useState } from "react";
+import NavigationLink from "../NavigationLink";
 
 interface ISize {
   height: number;
@@ -35,17 +36,14 @@ export default function PhoneNavigation() {
   return (
     <footer>
       <div style={{ height: size?.height ?? 0 }}></div>
-      <nav ref={ref} className="fixed bottom-0 left-0 z-50 w-full h-16 bg-nav">
+      <nav
+        ref={ref}
+        className="fixed bottom-0 left-0 z-50 w-full h-16 bg-nav-2"
+      >
         <div className="grid h-full max-w-lg grid-cols-3 mx-auto">
-          <Link href="/" className={linkStyles}>
-            <GoHomeFill className={iconStyles} />
-          </Link>
-          <Link href="/studio" className={linkStyles}>
-            <BsFillPlusSquareFill className={iconStyles} />
-          </Link>
-          <Link href="/profiles" className={linkStyles}>
-            <BsPeopleFill className={iconStyles} />
-          </Link>
+          <NavigationLink href="/" />
+          <NavigationLink href="/studio" />
+          <NavigationLink href="/profiles" />
         </div>
       </nav>
     </footer>

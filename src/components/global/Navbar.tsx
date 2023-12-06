@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [isDark]);
 
   return (
-    <div className="grid grid-cols-2 px-12 h-12 font-medium min-h-48">
+    <div className="grid grid-cols-2 px-12 h-14 font-medium min-h-48">
       <Link href="/" className="flex items-center gap-6 hover:text-blue-500">
         <Image
           alt="Recipe logo"
@@ -57,14 +57,12 @@ export default function Navbar() {
           Profiles
         </Link>
         <button
-          className="hover:text-blue-500"
+          className="hover:text-blue-500 h-full w-12 flex justify-center items-center"
           onClick={() => {
             setIsDark((t) => !t);
           }}
         >
-          {isMounted && (isDark ? <SunIcon /> : <MoonIcon />)}
-          {/* <MdLightMode /> */}
-          {/* <MdDarkMode /> */}
+          {isMounted && (isDark ? <MdLightMode /> : <MdDarkMode />)}
         </button>
       </div>
     </div>
