@@ -37,9 +37,9 @@ export default async function Recipe({ params }: Props) {
 
   return (
     <main className="text-content">
-      <div className="fixed top-4 left-4">
+      <div className="fixed top-4 left-4 block md:hidden">
         <Link href="/">
-          <BiArrowBack className="h-12 w-12 opacity-20 hover:opacity-80" />
+          <BiArrowBack className="h-12 w-12" />
         </Link>
       </div>
       <div className="max-w-3xl mx-auto">
