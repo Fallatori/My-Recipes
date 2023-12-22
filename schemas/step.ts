@@ -10,7 +10,7 @@ const step = {
   title: "step",
   type: "object",
   components: {
-    input: MyInput,
+    // input: MyInput,
   },
   fields: [
     {
@@ -42,8 +42,8 @@ const step = {
     {
       name: "shortDescription",
       title: "Short Description",
-      type: "text",
-      rows: 2,
+      type: "array",
+      of: [{ type: "block" }],
     },
   ],
   preview: {

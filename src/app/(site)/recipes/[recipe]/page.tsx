@@ -6,6 +6,7 @@ import type { RecipeType } from "root/types";
 import { getSingleRecipe } from "root/sanity/sanity.query";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
+import { BackButton } from "@/components/BackButton";
 
 type Props = {
   params: {
@@ -34,13 +35,10 @@ export default async function Recipe({ params }: Props) {
   const recipe: RecipeType = await getSingleRecipe(slug);
 
   const ingredientsArray = recipe.ingredients ?? [];
-
   return (
     <main className="text-content">
       <div className="fixed top-4 left-4 block md:hidden">
-        <Link href="/">
-          <BiArrowBack className="h-12 w-12" />
-        </Link>
+        <BackButton />
       </div>
       <div className="max-w-3xl mx-auto">
         <Image
@@ -89,7 +87,7 @@ export default async function Recipe({ params }: Props) {
                   alt={step.stepImage?.alt}
                 />
                 <p className="text-accent-1 px-2 md:text-xl">
-                  {step.shortDescription}
+                  <PortableText value={step.shortDescription} />
                 </p>
               </div>
             );

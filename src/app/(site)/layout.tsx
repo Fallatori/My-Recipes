@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx("bg-bkg text-content", inter.className)}>
-        <div className="hidden md:block bg-nav-2 text-accent-1 sticky top-0">
+        <div className="hidden md:block bg-nav-2 text-accent-1 sticky top-0 z-20">
           <Navbar />
         </div>
         {children}

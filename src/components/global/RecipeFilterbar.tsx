@@ -6,7 +6,7 @@ import { SearchInput } from "../SearchInput";
 
 export default function RecipeFilterBar({ searchQuery, setQuery, query }: any) {
   return (
-    <header className="py-8 z-30  px-8 bg-bkg text-content">
+    <header className="z-30  px-8 bg-bkg text-content">
       <div className="max-w-6xl mx-auto flex items-center justify-between md:max-w-[450px]">
         <SearchInput searchQuery={searchQuery} />
       </div>

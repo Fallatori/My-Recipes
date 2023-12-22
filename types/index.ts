@@ -23,7 +23,7 @@ interface Profile {
   _id: string;
 }
 interface RecipeStep {
-  shortDescription: string;
+  shortDescription: PortableTextBlock[];
   stepImage: StepImage;
 }
 

@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-use": "^17.4.2",
     "sanity": "^3.18.1",
-    "sanity-plugin-tags": "^2.0.1"
+    "sanity-plugin-tags": "^2.0.1",
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "@portabletext/react": "^3.0.11",

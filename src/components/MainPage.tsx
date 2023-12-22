@@ -29,6 +29,9 @@ export const MainPage = ({ recipes }: Props) => {
 
   return (
     <>
+      <div className="flex justify-center my-4 text-3xl text-accent-1 md:hidden">
+        <h1>My Recipes</h1>
+      </div>
       <RecipeFilterBar
         searchQuery={handleChange}
         setQuery={setQuery}
