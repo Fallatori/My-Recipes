@@ -1,6 +1,5 @@
 import RecipeList from "@/components/RecipeList";
 import Image from "next/image";
-import Link from "next/link";
 import { getRecipes, getSingleProfile } from "root/sanity/sanity.query";
 import { ProfileType, RecipeType } from "root/types";
 

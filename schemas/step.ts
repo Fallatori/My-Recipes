@@ -1,17 +1,7 @@
-import {
-  DummyField,
-  DummyItem,
-  DummyPreview,
-  MyInput,
-} from "@/components/studio/MyInput";
-
 const step = {
   name: "step",
   title: "step",
   type: "object",
-  components: {
-    // input: MyInput,
-  },
   fields: [
     {
       name: "stepImage",

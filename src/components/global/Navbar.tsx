@@ -9,7 +9,6 @@ import { BiSolidUser } from "react-icons/bi";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { IconContext } from "react-icons";
-import { MoonIcon, SunIcon } from "@/icons/svg/darktheme";
 
 export default function Navbar() {
   const prefersDark = useMedia("(prefers-color-scheme: dark)", false);

@@ -7,8 +7,9 @@ import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ********** TODO: Remove before deploy! *********************
+// *******************************
 export const fetchCache = "default-no-store";
+// *******************************
 
 export const metadata: Metadata = {
   title: "My Recipes",

@@ -4,8 +4,6 @@ import { PortableText } from "@portabletext/react";
 import { portableTextToPlainText } from "@/utils/portableTextToPlainText";
 import type { RecipeType } from "root/types";
 import { getSingleRecipe } from "root/sanity/sanity.query";
-import { BiArrowBack } from "react-icons/bi";
-import Link from "next/link";
 import { BackButton } from "@/components/BackButton";
 
 type Props = {
