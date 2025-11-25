@@ -11,7 +11,7 @@ My Recipes is a modern digital cookbook designed to help you organize your culin
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/my-recipes.git
+   git clone https://github.com/Fallatori/My-Recipes.git
    cd My-recipes
    ```
 
@@ -41,4 +41,4 @@ My Recipes is a modern digital cookbook designed to help you organize your culin
 6. **Create recipes**
 
    Press the studio button in the navbar and login with your Sanity account  
-   From here you can create new recipies and add new profiles
+   From here you can create new recipes and add new profiles
