@@ -11,7 +11,7 @@ interface Block {
 
 export function portableTextToPlainText(blocks: PortableTextBlock[] = []) {
   return (
-    blocks
+    (blocks || [])
       // loop through each block
       .map((block) => {
         // if it's not a text block with children,

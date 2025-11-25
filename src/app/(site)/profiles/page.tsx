@@ -16,8 +16,8 @@ export default async function Profiles() {
           >
             <Image
               className="rounded-2xl object-cover h-40 w-32  bg-top bg-[#1d1d20]"
-              src={profileImage.image}
-              alt={profileImage.alt}
+              src={profileImage?.image}
+              alt={profileImage?.alt}
               height={150}
               width={150}
               quality={100}

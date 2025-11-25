@@ -70,7 +70,7 @@ export default async function Recipe({ params }: Props) {
           ))}
         </div>
         <div>
-          {recipe.steps.map((step, index) => {
+          {(recipe.steps || []).map((step, index) => {
             return (
               <div key={index} className="mb-6 px-4">
                 <h2 className="font-bold md:text-2xl">Step {index + 1}</h2>

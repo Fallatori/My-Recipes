@@ -44,10 +44,10 @@ export default function RecipeList({ recipes, hideUser }: Props) {
                   <div className="flex gap-2 items-center">
                     <Image
                       className="rounded-full h-5 w-5"
-                      src={data.profile.profileImage.image}
+                      src={data.profile.profileImage?.image}
                       width={20}
                       height={20}
-                      alt={data.profile.profileImage.alt}
+                      alt={data.profile.profileImage?.alt}
                     ></Image>
                     <p className="">{data.profile.username}</p>
                   </div>
