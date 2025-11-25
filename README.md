@@ -2,6 +2,10 @@
 
 You can find a demo of the app at https://my-recipies.netlify.app/
 
+## About the App
+
+My Recipes is a modern digital cookbook designed to help you organize your culinary creations and share them with the world. Built with performance and ease of use in mind, it serves as a central hub for all your favorite dishes.
+
 ## Installation
 
 1. **Clone the repository**
